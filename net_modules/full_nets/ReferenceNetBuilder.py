@@ -6,7 +6,8 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 class ReferenceNetBuilder(object):
 
-    def create_model(self):
+    @staticmethod
+    def create_model():
         Input_img = Input(shape=(None, None, 3))
 
         # encoding architecture
