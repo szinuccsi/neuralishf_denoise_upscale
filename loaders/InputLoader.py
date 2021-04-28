@@ -4,7 +4,8 @@ import numpy as np
 class InputLoader(object):
 
     @staticmethod
-    def createInputData(train, val, method):
+    def createInputData(dir_regex, image_loader, method):
+        train, val = image_loader(dir_regex)
         train_x_px = []
 
         for i in range(train.shape[0]):
