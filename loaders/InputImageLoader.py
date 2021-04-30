@@ -24,8 +24,7 @@ class InputImageLoader(object):
         p = Pool(self.pool)
         img_array = p.map(InputImageLoader.read, image_files)
         images_array = np.array(img_array)
-        train_x, val_x = train_test_split(images_array, random_state=self.random_state,
-                                          test_size=self.test_size)
+        train_x, val_x = train_test_split(images_array, random_state=self.random_state, test_size=self.test_size)
         return train_x, val_x
 
     @staticmethod
