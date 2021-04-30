@@ -1,6 +1,9 @@
 import cv2 as cv2
 
-class DownScaleTransform(object):
+from loaders.TransformMethod import TransformMethod
+
+
+class DownScaleTransform(TransformMethod):
 
     def __init__(self, downscale_percent):
         super().__init__()

@@ -1,7 +1,10 @@
 import numpy as np
 import cv2 as cv2
 
-class AddNoiseTransform(object):
+from loaders.TransformMethod import TransformMethod
+
+
+class AddNoiseTransform(TransformMethod):
 
     def __init__(self, noise_amount):
         super().__init__()

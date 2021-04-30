@@ -1,11 +1,9 @@
 import numpy as np
 
 
-class InputLoader(object):
+class InputTransform(object):
 
-    @staticmethod
-    def createInputData(dir_regex, image_loader, method):
-        train, val = image_loader(dir_regex)
+    def createInputData(self, train, val, method):
         train_x_px = []
 
         for i in range(train.shape[0]):

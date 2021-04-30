@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from Config import Config
 
 
-class DemoImageLoader(object):
+class InputImageLoader(object):
 
     def __init__(self, pool=10, test_size=0.2, random_state=32):
         super().__init__()
@@ -22,7 +22,7 @@ class DemoImageLoader(object):
         for f in image_files:
             print(f)
         p = Pool(self.pool)
-        img_array = p.map(DemoImageLoader.read, image_files)
+        img_array = p.map(InputImageLoader.read, image_files)
         images_array = np.array(img_array)
         train_x, val_x = train_test_split(images_array, random_state=self.random_state,
                                           test_size=self.test_size)
